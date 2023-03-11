@@ -129,7 +129,7 @@ lzpf="ouch list"
 # Hash Files
 ##########################################################
 
-if test ! "$(command -v sha1sum)"; then
+if test "$(command -v sha1sum)"; then
     alias sha1="sha1sum"
     alias sha2="sha256sum"
     alias sha5="sha512sum"
