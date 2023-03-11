@@ -6,11 +6,7 @@
 export ZELLIJ_CONFIG_DIR=${HOME}/.config/zellij
 OX_ELEMENT[zj]=${ZELLIJ_CONFIG_DIR}/config.kdl
 OX_ELEMENT[zjl_]=${ZELLIJ_CONFIG_DIR}/layouts
-
 # backup files
-if [ ! -d ${OX_BACKUP}/zellij ]; then
-    mkdir -p ${OX_BACKUP}/zellij
-fi
 OX_OXIDE[bkzj]=${OX_BACKUP}/zellij/config.kdl
 OX_OXIDE[bkzjl_]=${OX_BACKUP}/zellij/layouts
 

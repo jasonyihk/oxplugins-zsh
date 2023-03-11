@@ -7,9 +7,6 @@ OX_OXYGEN[oxhx]=${OXIDIZER}/defaults/helix.toml
 OX_ELEMENT[hx]=${HOME}/.config/helix/config.toml
 OX_ELEMENT[hxl]=${HOME}/.config/helix/languages.toml
 # backup files
-if [ ! -d ${OX_BACKUP}/helix ]; then
-    mkdir -p ${OX_BACKUP}/helix
-fi
 OX_OXIDE[bkhx]=${OX_BACKUP}/helix/config.toml
 OX_OXIDE[bkhxl]=${OX_BACKUP}/helix/languages.toml
 

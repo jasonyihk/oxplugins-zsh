@@ -6,10 +6,6 @@ OX_ELEMENT[vs]=${APPDATA}/Code/User/settings.json
 OX_ELEMENT[vsk]=${APPDATA}/Code/User/keybindings.json
 OX_ELEMENT[vss_]=${APPDATA}/Code/User/snippets
 # backup files
-if [ ! -d ${OX_BACKUP}/vscode ]; then
-    mkdir -p ${OX_BACKUP}/vscode
-fi
-
 OX_OXIDE[bkvsk]=${OX_BACKUP}/vscode/keybindings.json
 OX_OXIDE[bkvss_]=${OX_BACKUP}/vscode/snippets
 OX_OXIDE[bkvsx]=${OX_BACKUP}/vscode/vscode-exts.txt
