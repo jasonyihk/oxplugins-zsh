@@ -176,9 +176,6 @@ che() {
     *bash)
         . ${OX_ELEMENT[bs]}
         ;;
-    *fish)
-        . ${OX_ELEMENT[fs]}
-        ;;
     esac
 }
 
@@ -201,9 +198,6 @@ case ${SHELL} in
     ;;
 *bash)
     eval "$(zoxide init bash)"
-    ;;
-*fish)
-    eval "$(zoxide init fish)"
     ;;
 esac
 
