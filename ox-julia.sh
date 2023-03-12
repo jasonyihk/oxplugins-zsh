@@ -2,10 +2,12 @@
 # config
 ##########################################################
 
+export JULIA_DEPOT_PATH=${JULIA_DEPOT_PATH:-"${HOME}"}
+
 # config files
-OX_ELEMENT[jl]=${HOME}/.julia/config/startup.jl
-OX_ELEMENT[jlp]=${HOME}/.julia/environments/v$(julia -v | rg --only-matching "\d.\d")/Project.toml
-OX_ELEMENT[jlm]=${HOME}/.julia/environments/v$(julia -v | rg --only-matching "\d.\d")/Manifest.toml
+OX_ELEMENT[jl]=${JULIA_DEPOT_PATH}/.julia/config/startup.jl
+OX_ELEMENT[jlp]=$(fd 'Project' ${JULIA_DEPOT_PATH}/.julia/environments)
+OX_ELEMENT[jlm]=$(fd 'Manifest' ${JULIA_DEPOT_PATH}/.julia/environments)
 # backup files
 OX_OXIDE[bkjl]=${OX_BACKUP}/julia/startup.jl
 OX_OXIDE[bkjlx]=${OX_BACKUP}/julia/julia-pkgs.txt
