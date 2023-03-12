@@ -43,7 +43,31 @@ back_conda() {
         local conda_file=$2
     fi
     echo "Backup Conda Env $conda_env to $conda_file"
-    conda tree -n $conda_env leaves | sd "[',\[\]]" "" | sd " " "\n" >$conda_file
+    conda tree -n $conda_env leaves >$conda_file
+}
+
+clean_conda() {
+    if [[ -z $1 ]]; then
+        local conda_env=base
+        local conda_file=${OX_OXIDE[bkceb]}
+    elif [[ ${#1} < 4 ]]; then
+        local conda_env=${OX_CONDA_ENV[$1]}
+        local conda_file=${OX_OXIDE[bkce$1]}
+    else
+        local conda_env=$1
+        local conda_file=$2
+    fi
+
+    echo "Clean Conda Env $conda_env by $conda_file"
+    local the_leaves=$(conda tree -n $conda_env leaves)
+
+    echo $the_leaves | while read line; do
+        local pkg=$(cat $conda_file | rg $line)
+        if [ -z $pkg ]; then
+            $OX_CONDA uninstall -n $conda_env $line -y
+        fi
+    done
+
 }
 
 ##########################################################
