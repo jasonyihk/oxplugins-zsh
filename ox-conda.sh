@@ -58,7 +58,7 @@ clean_conda() {
         local conda_file=$2
     fi
 
-    echo "Clean Conda Env $conda_env by $conda_file"
+    echo "Cleanup Conda Env $conda_env by $conda_file"
     local the_leaves=$(conda tree -n $conda_env leaves)
 
     echo $the_leaves | while read line; do
@@ -67,7 +67,9 @@ clean_conda() {
             $OX_CONDA uninstall -n $conda_env $line --quiet --yes
         fi
     done
-
+    if [ $(echo $the_leaves | wc -w) -eq $(cat $conda_file | wc -w) ] && [ $(echo $the_leaves | wc -c) -eq $(cat $conda_file | wc -c) ]; then
+        echo "Conda Env Cleanup Finished"
+    fi
 }
 
 ##########################################################
