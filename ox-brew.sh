@@ -285,21 +285,14 @@ alias bedc="be --cask"
 # cask downloading
 ##########################################################
 
-# download by aria2
-bdl() {
-    local url=$(brew info --cask --json=v2 $1 | rg \"url\" | rg --only-matching \"https:.+\" -m 1)
-    echo "downloading from $url to ${OX_DOWNLOAD}"
-    eval $(aria2c --dir ${OX_DOWNLOAD} $url)
-}
-
 # replace cache file by predownloaded file
 brp() {
-    local f_pred=$(ls ${OX_DOWNLOAD} | rg --ignore-case $1)
+    local f_pred=$(fd "$1" ${OX_DOWNLOAD})
     if [[ -z $f_pred ]]; then
         echo "predownloaded file not found"
         return 1
     fi
-    local f_cache=$(ls ${HOMEBREW_DOWNLOAD}/*.incomplete | rg --ignore-case $1 | sd ".incomplete" "")
+    local f_cache=$(fd "$1" ${HOMEBREW_DOWNLOAD} | sd ".incomplete" "")
     mv ${OX_DOWNLOAD}/$f_pred $f_cache
 }
 
