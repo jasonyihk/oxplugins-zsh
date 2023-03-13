@@ -293,7 +293,7 @@ brp() {
         return 1
     fi
     local f_cache=$(fd "$1" ${HOMEBREW_DOWNLOAD} | sd ".incomplete" "")
-    mv ${OX_DOWNLOAD}/$f_pred $f_cache
+    mv $f_pred $f_cache
 }
 
 ##########################################################
