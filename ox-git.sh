@@ -58,20 +58,20 @@ gcl() {
     esac
 }
 
-# git republish
-grpb() {
-    git remote add origin $1
-    local branch=${2:-master}
-    git pull $1 $branch
-    git push --set-upstream origin $branch
-}
-
 # list fat files
 #
 # $1: item number to display
 gjk() {
     local number=${1:-10}
     git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | rg 'blob' | sort -k 2 -n | tail -$number
+}
+
+# git republish
+grpb() {
+    git remote add origin $1
+    local branch=${2:-master}
+    git pull $1 $branch
+    git push --set-upstream origin $branch
 }
 
 ##########################################################
@@ -83,5 +83,5 @@ alias gth="git help tag"
 alias gtls="git tag --list"
 alias gta="git tag --annotate"
 alias gtrm="git tag --delete"
-alias gte="git tag --edit"
+alias gted="git tag --edit"
 alias gtcl="git tag --cleanup"
