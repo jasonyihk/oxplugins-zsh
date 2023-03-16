@@ -129,15 +129,10 @@ lzpf="ouch list"
 # Hash Files
 ##########################################################
 
-if test "$(command -v sha1sum)"; then
-    alias sha1="sha1sum"
-    alias sha2="sha256sum"
-    alias sha5="sha512sum"
-else
-    alias sha1="shasum -a 1"
-    alias sha2="shasum -a 256"
-    alias sha5="shasum -a 512"
-fi
+alias md5="hashsum --md5"
+alias sha1="hashsum --sha1"
+alias sha2="hashsum --sha256"
+alias sha5="hashsum --sha512"
 
 ##########################################################
 # Proxy Utils
