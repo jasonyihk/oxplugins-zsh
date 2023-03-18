@@ -4,7 +4,7 @@
 
 export GPG_TTY=$(tty)
 
-OX_OXYGEN[oxg]=${OXIDIZER}/default/.gitconfig
+OX_OXYGEN[oxg]=${OXIDIZER}/defaults/.gitconfig
 OX_ELEMENT[g]=${HOME}/.gitconfig
 
 ##########################################################
