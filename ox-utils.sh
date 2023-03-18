@@ -69,7 +69,7 @@ dpf() {
         if [ ! -d $(dirname $out_path) ]; then
             mkdir $(dirname $out_path)
         fi
-        cp -v ${OX_OXYGEN[ox$file]} ${OX_OXIDE[bk$file]}
+        cp -v $in_path $out_path
     done
 }
 
