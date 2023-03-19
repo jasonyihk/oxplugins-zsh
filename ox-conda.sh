@@ -64,6 +64,7 @@ clean_conda() {
     echo $the_leaves | while read line; do
         local pkg=$(cat $conda_file | rg $line)
         if [ -z $pkg ]; then
+            echo "Uninstalling $pkg"
             $OX_CONDA uninstall -n $conda_env $line --quiet --yes
         fi
     done
