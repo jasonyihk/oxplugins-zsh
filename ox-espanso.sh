@@ -4,11 +4,11 @@
 
 # config files
 OX_ELEMENT[es]=${APPDATA}/espanso/config/default.yml
-OX_ELEMENT[esx]=${APPDATA}/espanso/match/base.yml
+OX_ELEMENT[esb]=${APPDATA}/espanso/match/base.yml
 OX_ELEMENT[esx_]=${APPDATA}/espanso/match/packages
 # backup files
 OX_OXIDE[bkes]=${OX_BACKUP}/espanso/config/default.yml
-OX_OXIDE[bkesx]=${OX_BACKUP}/espanso/match/base.yml
+OX_OXIDE[bkesb]=${OX_BACKUP}/espanso/match/base.yml
 OX_OXIDE[bkesx_]=${OX_BACKUP}/espanso/match/packages
 
 ##########################################################
