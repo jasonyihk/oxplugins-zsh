@@ -57,9 +57,3 @@ alias cnif="conan inspect"
 alias cnpb="conan publish"
 alias cnts="conan test"
 alias cnpb="conan upload"
-
-##########################################################
-# cmake
-##########################################################
-
-alias cmh="cmake --help"
