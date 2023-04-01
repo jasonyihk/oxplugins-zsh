@@ -2,7 +2,7 @@
 # config
 ##########################################################
 
-# config files
+# system files
 OX_ELEMENT[es]=${APPDATA}/espanso/config/default.yml
 OX_ELEMENT[esb]=${APPDATA}/espanso/match/base.yml
 OX_ELEMENT[esx_]=${APPDATA}/espanso/match/packages

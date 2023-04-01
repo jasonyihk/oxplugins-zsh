@@ -3,7 +3,7 @@
 ##########################################################
 
 OX_OXYGEN[oxhx]=${OXIDIZER}/defaults/helix.toml
-# config files
+# system files
 OX_ELEMENT[hx]=${HOME}/.config/helix/config.toml
 OX_ELEMENT[hxl]=${HOME}/.config/helix/languages.toml
 # backup files

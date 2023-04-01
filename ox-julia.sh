@@ -4,7 +4,9 @@
 
 export JULIA_DEPOT_PATH=${JULIA_DEPOT_PATH:-"${HOME}/.julia"}
 
-# config files
+# default files
+OX_OXYGEN[jl]=${OXIDIZER}/defaults/startup.jl
+# system files
 OX_ELEMENT[jl]=${JULIA_DEPOT_PATH}/config/startup.jl
 OX_ELEMENT[jlp]=$(fd 'Project' ${JULIA_DEPOT_PATH}/environments)
 OX_ELEMENT[jlm]=$(fd 'Manifest' ${JULIA_DEPOT_PATH}/environments)

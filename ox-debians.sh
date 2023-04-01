@@ -5,7 +5,7 @@
 # binaries
 export OX_OPEN=nautilus
 
-# config files
+# system files
 OX_ELEMENT[scs]="/etc/apt/sources.list"
 # backup files
 OX_OXIDE[bkscs]=${OX_BACKUP}/install/source.list

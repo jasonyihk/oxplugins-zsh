@@ -2,7 +2,7 @@
 # config
 ##########################################################
 
-# config files
+# system files
 OX_ELEMENT[cg]=${HOME}/.cargo/config.toml
 OX_ELEMENT[rs]=${HOME}/.rustup/settings.toml
 # backup files

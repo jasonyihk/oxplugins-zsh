@@ -2,7 +2,7 @@
 # config
 ##########################################################
 
-# config files
+# system files
 OX_ELEMENT[nj]=${HOME}/.npmrc
 # backup files
 OX_OXIDE[bknj]=${OX_BACKUP}/javascript/.npmrc

@@ -2,7 +2,7 @@
 # config
 ##########################################################
 
-# config files
+# system files
 OX_ELEMENT[cn]=${HOME}/.conan/conan.conf
 OX_ELEMENT[cnr]=${HOME}/.conan/remotes.json
 OX_ELEMENT[cnd]=${HOME}/.conan/profiles/default

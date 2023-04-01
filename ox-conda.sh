@@ -2,8 +2,9 @@
 # config
 ##########################################################
 
+# default files
 OX_OXYGEN[oxc]=${OXIDIZER}/defaults/.condarc
-# config files
+# system files
 OX_ELEMENT[c]=${HOME}/.condarc
 # backup files
 OX_OXIDE[bkc]=${OX_BACKUP}/conda/.condarc

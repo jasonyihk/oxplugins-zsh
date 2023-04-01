@@ -2,7 +2,7 @@
 # config
 ##########################################################
 
-# config files
+# system files
 export ZELLIJ_CONFIG_DIR=${HOME}/.config/zellij
 OX_ELEMENT[zj]=${ZELLIJ_CONFIG_DIR}/config.kdl
 OX_ELEMENT[zjl_]=${ZELLIJ_CONFIG_DIR}/layouts
