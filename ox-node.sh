@@ -5,6 +5,9 @@
 # system files
 OX_ELEMENT[nj]=${HOME}/.npmrc
 # backup files
+if [[ -z ${OX_BACKUP}/javascript ]]; then
+    mkdir "${OX_BACKUP}/javascript"
+fi
 OX_OXIDE[bknj]=${OX_BACKUP}/javascript/.npmrc
 OX_OXIDE[bknjx]=${OX_BACKUP}/javascript/node-pkgs.txt
 
