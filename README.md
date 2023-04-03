@@ -12,7 +12,6 @@
   - macOS
   - Debian
   - File Utility
-  - File Formats
 - Language
   - Julia
   - Node
@@ -22,9 +21,13 @@
   - Pueue
   - Container (Docker/Podman)
   - Helix
-- CLI for GUI
+- CLI for App
   - Bitwarden-CLI
   - Jupyter
   - Espanso
   - TeXLive
   - VSCode-CLI
+- Widgets
+  - File Formats
+  - Weather
+  - Notes
