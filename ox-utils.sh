@@ -13,15 +13,15 @@ epf() {
 
         if [[ -z $out_path ]]; then
             echo "OX_OXIDE[bk$file] does not exist, please define it in custom.sh"
-        elif [[ $file == *_ ]]; then
-            rm -rf $out_path
-            cp -R -v $in_path $out_path
+        elif [ ! -d $(dirname $out_path) ]; then
+            mkdir -p $(dirname $out_path)
         else
-
-            if [ ! -d $(dirname $out_path) ]; then
-                mkdir $(dirname $out_path)
+            if [[ $file == *_ ]]; then
+                rm -rf $out_path
+                cp -R -v $in_path $out_path
+            else
+                cp -v $in_path $out_path
             fi
-            cp -v $in_path $out_path
         fi
     done
 }
@@ -33,14 +33,15 @@ ipf() {
         local in_path=${OX_OXIDE[bk$file]}
         local out_path=${OX_ELEMENT[$file]}
 
-        if [[ $file == *_ ]]; then
-            rm -rf $out_path
-            cp -R -v $in_path $out_path
+        if [ ! -d $(dirname $out_path) ]; then
+            mkdir -p $(dirname $out_path)
         else
-            if [ ! -d $(dirname $out_path) ]; then
-                mkdir $(dirname $out_path)
+            if [[ $file == *_ ]]; then
+                rm -rf $out_path
+                cp -R -v $in_path $out_path
+            else
+                cp -v $in_path $out_path
             fi
-            cp -v $in_path $out_path
         fi
     done
 }
@@ -53,7 +54,7 @@ iif() {
         local out_path=${OX_ELEMENT[$file]}
 
         if [ ! -d $(dirname $out_path) ]; then
-            mkdir $(dirname $out_path)
+            mkdir -p $(dirname $out_path)
         fi
         cp -v $in_path $out_path
     done
@@ -67,7 +68,7 @@ dpf() {
         local out_path=${OX_OXIDE[bk$file]}
 
         if [ ! -d $(dirname $out_path) ]; then
-            mkdir $(dirname $out_path)
+            mkdir -p $(dirname $out_path)
         fi
         cp -v $in_path $out_path
     done
