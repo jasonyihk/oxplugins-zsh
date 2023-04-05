@@ -4,12 +4,14 @@
 
 export JULIA_DEPOT_PATH=${JULIA_DEPOT_PATH:-"${HOME}/.julia"}
 
+JULIA_VERSION=$(julia -v | rg --only-matching '\d.\d')
+
 # default files
 OX_OXYGEN[jl]=${OXIDIZER}/defaults/startup.jl
 # system files
 OX_ELEMENT[jl]=${JULIA_DEPOT_PATH}/config/startup.jl
-OX_ELEMENT[jlp]=$(fd 'Project' ${JULIA_DEPOT_PATH}/environments)
-OX_ELEMENT[jlm]=$(fd 'Manifest' ${JULIA_DEPOT_PATH}/environments)
+OX_ELEMENT[jlp]=${JULIA_DEPOT_PATH}/environments/v${JULIA_VERSION}/Project.toml
+OX_ELEMENT[jlm]=${JULIA_DEPOT_PATH}/environments/v${JULIA_VERSION}/Manifest.toml
 # backup files
 OX_OXIDE[bkjl]=${OX_BACKUP}/julia/startup.jl
 OX_OXIDE[bkjlx]=${OX_BACKUP}/julia/julia-pkgs.txt
