@@ -2,7 +2,17 @@
 # Configuration File Utils
 ##########################################################
 
-export PATH="${HOME}BREW_PREFIX/opt/uutils-coreutils/libexec/uubin:$PATH"
+export PATH="${HOMEBREW_PREFIX}/opt/uutils-coreutils/libexec/uubin:$PATH"
+
+test_oxpath() {
+    if [[ -z $1 ]]; then
+        echo "$1 does not exist, please define it in custom.sh"
+    fi
+
+    if [ ! -d $(dirname $1) ]; then
+        mkdir -p $(dirname $1)
+    fi
+}
 
 # export file
 # $@=names
@@ -11,18 +21,15 @@ epf() {
         local in_path=${OX_ELEMENT[$file]}
         local out_path=${OX_OXIDE[bk$file]}
 
-        if [[ -z $out_path ]]; then
-            echo "OX_OXIDE[bk$file] does not exist, please define it in custom.sh"
-        elif [ ! -d $(dirname $out_path) ]; then
-            mkdir -p $(dirname $out_path)
+        test_oxpath $out_path
+
+        if [[ $file == *_ ]]; then
+            rm -rf $out_path
+            cp -R -v $in_path $out_path
         else
-            if [[ $file == *_ ]]; then
-                rm -rf $out_path
-                cp -R -v $in_path $out_path
-            else
-                cp -v $in_path $out_path
-            fi
+            cp -v $in_path $out_path
         fi
+
     done
 }
 
@@ -33,15 +40,13 @@ ipf() {
         local in_path=${OX_OXIDE[bk$file]}
         local out_path=${OX_ELEMENT[$file]}
 
-        if [ ! -d $(dirname $out_path) ]; then
-            mkdir -p $(dirname $out_path)
+        test_oxpath $out_path
+
+        if [[ $file == *_ ]]; then
+            rm -rf $out_path
+            cp -R -v $in_path $out_path
         else
-            if [[ $file == *_ ]]; then
-                rm -rf $out_path
-                cp -R -v $in_path $out_path
-            else
-                cp -v $in_path $out_path
-            fi
+            cp -v $in_path $out_path
         fi
     done
 }
@@ -53,9 +58,8 @@ iif() {
         local in_path=${OX_OXYGEN[ox$file]}
         local out_path=${OX_ELEMENT[$file]}
 
-        if [ ! -d $(dirname $out_path) ]; then
-            mkdir -p $(dirname $out_path)
-        fi
+        test_oxpath $out_path
+
         cp -v $in_path $out_path
     done
 }
@@ -67,9 +71,8 @@ dpf() {
         local in_path=${OX_OXYGEN[ox$file]}
         local out_path=${OX_OXIDE[bk$file]}
 
-        if [ ! -d $(dirname $out_path) ]; then
-            mkdir -p $(dirname $out_path)
-        fi
+        test_oxpath $out_path
+
         cp -v $in_path $out_path
     done
 }
@@ -184,6 +187,7 @@ export _ZO_DATA_DIR=${HOME}/.config/zoxide
 if [ ! -d $_ZO_DATA_DIR ]; then
     mkdir -p $_ZO_DATA_DIR
 fi
+
 OX_ELEMENT[z]=${_ZO_DATA_DIR}/db.zo
 # backup files
 OX_OXIDE[bkz]=${OX_BACKUP}/shell/db.zo
