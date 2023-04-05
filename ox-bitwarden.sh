@@ -43,24 +43,16 @@ alias bwup="bw sync"
 # $1=object
 bwe() {
     case $1 in
-    -d)
-        bw edit folder $2
-        ;;
-    *)
-        bw edit item $1
-        ;;
+    -d) bw edit folder $2 ;;
+    *) bw edit item $1 ;;
     esac
 }
 
 # $1=object
 bwrm() {
     case $1 in
-    -d)
-        bw delete folder $2
-        ;;
-    *)
-        bw delete item $1
-        ;;
+    -d) bw delete folder $2 ;;
+    *) bw delete item $1 ;;
     esac
 }
 
