@@ -287,12 +287,12 @@ alias bedc="be --cask"
 
 # replace cache file by predownloaded file
 brp() {
-    local f_pred=$(fd "$1" ${OX_DOWNLOAD})
+    local f_pred=$(find ${OX_DOWNLOAD} "$1")
     if [[ -z $f_pred ]]; then
         echo "predownloaded file not found"
         return 1
     fi
-    local f_cache=$(fd "$1" ${HOMEBREW_DOWNLOAD} | sd ".incomplete" "")
+    local f_cache=$(find ${HOMEBREW_DOWNLOAD} "$1" | sd ".incomplete" "")
     mv $f_pred $f_cache
 }
 
