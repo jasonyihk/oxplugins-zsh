@@ -78,7 +78,7 @@ alias axls="grep ^[^#] /etc/apt/sources.list"
 ##########################################################
 
 # use host proxy
-wlpx() {
+wpx() {
     host_ip=$(cat /etc/resolv.conf | grep "nameserver" | cut -f 2 -d " ")
     export ALL_PROXY="https://$host_ip:${OX_PROXY[$1]}"
 }

@@ -25,7 +25,6 @@ bwsc() {
     -n) bw get notes $1 ;;
     *) bw get item $2 --pretty ;;
     esac
-
 }
 
 alias bwst="bw status --pretty"
