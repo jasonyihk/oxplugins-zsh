@@ -25,22 +25,22 @@ update() {
 
 clean() {
     case $1 in
-    zs)
+    zsh)
         echo "Cleaning up ZSH History.\n"
         rm -rfv ${HOME}/.zsh_sessions/*
         rm -fv ${HOME}/.zsh_history
         ;;
-    chr)
+    chrome)
         echo "Cleaning up Chrome Cache.\n"
         rm -rfv ${MACOS_CACHES}/Google/Chrome/*
         ;;
-    ct)
+    container)
         echo "Cleaning Container Caches"
         for ct in $(ls ~/Library/Containers/); do
             rm -rfv ~/Library/Containers/$ct/Data/Library/Caches/*
         done
         ;;
-    vol)
+    volume)
         echo "Emptying trash in Volumes.\n"
         sudo rm -rfv /Volumes/*/.Trashes
         ;;
