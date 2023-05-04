@@ -44,7 +44,7 @@ back_conda() {
         local conda_file=$2
     fi
     echo "Backup Conda Env $conda_env to $conda_file"
-    conda tree -n $conda_env leaves >$conda_file
+    conda tree -n $conda_env leaves | sort >$conda_file
 }
 
 clean_conda() {
