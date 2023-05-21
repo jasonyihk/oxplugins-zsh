@@ -3,7 +3,7 @@
 ##########################################################
 
 # backup files
-OX_OXIDE[bktl]=${OX_BACKUP}/tex/texlive-pkgs.txt
+OX_OXIDE[bktl]=${OX_BACKUP}/text/texlive-pkgs.txt
 
 if [[ $(uname) = "Darwin" ]]; then
     export texlive=/usr/local/texlive
